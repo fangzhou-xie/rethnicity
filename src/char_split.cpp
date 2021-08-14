@@ -18,6 +18,7 @@ std::vector<std::string> char_split(std::string s, int n = 2) {
     }
     t[i] = tempstr;
   }
+  
   return(t);
 }
 
