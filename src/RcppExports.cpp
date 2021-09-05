@@ -11,44 +11,37 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// char_split
-std::vector<std::string> char_split(std::string s);
-RcppExport SEXP _rethnicity_char_split(SEXP sSEXP) {
+// predict_lastname
+Eigen::MatrixXd predict_lastname(std::vector<std::string> strings, int threads, std::string model_path);
+RcppExport SEXP _rethnicity_predict_lastname(SEXP stringsSEXP, SEXP threadsSEXP, SEXP model_pathSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type s(sSEXP);
-    rcpp_result_gen = Rcpp::wrap(char_split(s));
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type strings(stringsSEXP);
+    Rcpp::traits::input_parameter< int >::type threads(threadsSEXP);
+    Rcpp::traits::input_parameter< std::string >::type model_path(model_pathSEXP);
+    rcpp_result_gen = Rcpp::wrap(predict_lastname(strings, threads, model_path));
     return rcpp_result_gen;
 END_RCPP
 }
-// test_cpp
-int test_cpp(std::string model_path);
-RcppExport SEXP _rethnicity_test_cpp(SEXP model_pathSEXP) {
+// predict_fullname
+Eigen::MatrixXd predict_fullname(std::vector<std::string> strings_fn, std::vector<std::string> strings_ln, int threads, std::string model_path);
+RcppExport SEXP _rethnicity_predict_fullname(SEXP strings_fnSEXP, SEXP strings_lnSEXP, SEXP threadsSEXP, SEXP model_pathSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type strings_fn(strings_fnSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type strings_ln(strings_lnSEXP);
+    Rcpp::traits::input_parameter< int >::type threads(threadsSEXP);
     Rcpp::traits::input_parameter< std::string >::type model_path(model_pathSEXP);
-    rcpp_result_gen = Rcpp::wrap(test_cpp(model_path));
-    return rcpp_result_gen;
-END_RCPP
-}
-// test_lastname
-int test_lastname(std::string model_path);
-RcppExport SEXP _rethnicity_test_lastname(SEXP model_pathSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type model_path(model_pathSEXP);
-    rcpp_result_gen = Rcpp::wrap(test_lastname(model_path));
+    rcpp_result_gen = Rcpp::wrap(predict_fullname(strings_fn, strings_ln, threads, model_path));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rethnicity_char_split", (DL_FUNC) &_rethnicity_char_split, 1},
-    {"_rethnicity_test_cpp", (DL_FUNC) &_rethnicity_test_cpp, 1},
-    {"_rethnicity_test_lastname", (DL_FUNC) &_rethnicity_test_lastname, 1},
+    {"_rethnicity_predict_lastname", (DL_FUNC) &_rethnicity_predict_lastname, 3},
+    {"_rethnicity_predict_fullname", (DL_FUNC) &_rethnicity_predict_fullname, 4},
     {NULL, NULL, 0}
 };
 

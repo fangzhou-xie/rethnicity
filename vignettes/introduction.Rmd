@@ -1,0 +1,142 @@
+---
+title: "Introduction to `rethnicity` package"
+output: rmarkdown::html_vignette
+author: Fangzhou Xie
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+In this package, I aim to provide a function that could predict ethnicity (race) from names.
+
+```{r setup}
+library(rethnicity)
+```
+
+# WARNING!
+
+I created this package hoping to help applied researchers on their studies regarding ethnic bias and discrimination,
+and potentially eliminate the racial and ethnic disparities. By using this package, you agree to the following:
+
+1. You **will NOT** use this package for purposes other than academic research.
+2. You **will NOT** disclose the predicted ethnic group to the public, given the names data you might have.
+3. You **will NOT** discriminate anyone on the basis of race and color, by using the methods provided by this package.
+<!-- 4. You **agree** to advocate racial equality. -->
+
+Again, you should use the package responsibly.
+
+# Getting to use the package in 5 minutes
+
+## I want to predict ethnicity from last names!
+
+Sure. I have trained a model to predict and classify race based on last names.
+Simply use it as:
+
+```{r}
+predict_ethnicity(lastnames = "Freeman", method = "lastname")
+```
+
+## What if I have both first names and last names?
+
+Of course. There is a separate model just to do that.
+By having both first names and last names, we can achieve higher accuracy than only having last names.
+The syntax is similar to what we have seen from above.
+
+```{r}
+predict_ethnicity(firstnames = "Morgan", lastnames = "Freeman", method = "fullname")
+```
+
+## What if I have multiple names?
+
+Cool. I got you covered. Just use vectors as input.
+
+```{r}
+firstnames <- c("Morgan", "Will")
+lastnames <- c("Freeman", "Smith")
+predict_ethnicity(lastnames = lastnames, method = "lastname")
+predict_ethnicity(firstnames = firstnames, lastnames = lastnames, method = "fullname")
+```
+
+Just remember to have the same length for the `firstnames` and `lastnames` vectors and the first name and last name
+for the same person should have same index in each of the vectors.
+
+## Wait. I want to predict a million names!
+
+Alright. The package also supports extremely fast execution by multi-threading via the wonderful `RcppThread` package.
+To use this, just pass a number to the `threads` argument and the number need to be greater than 0.
+
+```{r}
+lastnames <- rep("Freeman", 1000000)
+# measure the elapsed time
+start_time <- Sys.time()
+p <- predict_ethnicity(lastnames = lastnames, method = "lastname", threads = 20)
+end_time <- Sys.time()
+end_time - start_time
+```
+
+For most use cases that I can imagine, the default setting (`threads = 0`) should be fast enough since we are leveraging C++
+routines for the processing. If you have very large dataset, or if you have a powerful machine, or if you just
+want to run the code faster, you can set the `threads` argument to be bigger than 0 and you should obeserve
+performance boost.
+
+Note that I have 24-thread desktop and hence choosing 20 threads to work on this. You may need to wisely choose
+the appropriate number of threads for the job. In general, the more threads you have, the faster it should run.
+But the relationship is not linear, as there will be more overhead when increasing the number of threads.
+
+<!-- ```{r} -->
+<!-- lastnames <- rep("Freeman", 1000000) -->
+<!-- # measure the elapsed time -->
+<!-- start_time <- Sys.time() -->
+<!-- p <- predict_ethnicity(lastnames = lastnames, method = "lastname", threads = 10) -->
+<!-- end_time <- Sys.time() -->
+<!-- end_time - start_time -->
+<!-- ``` -->
+
+Processing a million names only spent around 10 seconds for us. I would call this pretty fast.
+
+
+# FAQ
+
+## How did you train the models?
+
+I first trained the models in Keras with Python, using the Florida Voter Registration dataset.
+After training a big model for the prediction, I also trained a smaller model than will mimic
+the prediction of large model (this is called "distillation of knowledge").
+By doing so, we could significantly reduce the size of the model while keeping the accuracy.
+This is very important if we want the package to be lightweight and fast in processing data.
+
+## How did you create the package with Keras models?
+
+After the training and testing process, I save the distilled model and export it into C++ by the `frugally-deep` project.
+This will allow us to get rid of the dependency on Keras and Python and we can directly making inferences
+from C++. From here, it is very obvious that we can wrap the inference procedure by `Rcpp` and call it from R.
+
+Note that one could potentially use the `keras` package in R to load Keras models trained in Python.
+But I believe this would have defeated the purpose of having a R package, as the `keras` package
+still depends on Python and the installation of Keras. You can argue that we are actually still using Python:)
+
+## What is the difference between `fullname` model vs. `lastname` model?
+
+<!-- TODO: potentially cite my article in later CRAN submission -->
+I have trained two different model for predicting ethnicity from names, one only leverages last names, while
+another incorporate both first names and last names. In some applications, researchers may 
+only have access to last names, then they should consider using the `lastname` method.
+In other cases, we could also have first names available, then we could incorporate this information
+and use the `fullname` method. This will yield better accuracy for the prediction.
+
+## What about the performance of the package?
+
+The processing speed is super fast, as the heavy-lifting has been delegated to the underlying C++.
+What is more, to make it even faster, I used `RcppThread` to achieve multi-threading.
+This would be extremely useful if you have a very large dataset at hand.
+As shown in the example above, we have achieved to process a million names within 10 seconds.
+In other words, we could predict the race from a name by 10 μs on average.
