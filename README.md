@@ -1,17 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- # ```{r, echo = FALSE, results = "hide", message = FALSE} -->
+<!-- # suppressMessages(library(badger)) -->
+<!-- # ``` -->
 
 # rethnicity
 
 <!-- badges: start -->
+<!-- # ```{r, echo = FALSE, results = "asis"} -->
+<!-- # cat( -->
+<!-- #   badge_cran_release("rethnicity", "green"), -->
+<!-- #   badge_cran_download("rethnicity", "grand-total", "green"), -->
+<!-- #   badge_cran_checks("rethnicity"), -->
+<!-- #   badge_last_commit("fangzhou-xie/rethnicity") -->
+<!-- # ) -->
+<!-- # ``` -->
 
-    #> ✓ Setting active project to '/home/xiefangzhou/workspace/gitfolder/rethnicity'
-
-[![](https://www.r-pkg.org/badges/version/rethnicity?color=green)](https://cran.r-project.org/package=rethnicity)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity?color=green)](https://cran.r-project.org/package=rethnicity)
-[![CRAN
-checks](https://cranchecks.info/badges/summary/rethnicity)](https://cran.r-project.org/web/checks/check_results_rethnicity.html)
-[![](https://img.shields.io/github/last-commit/fangzhou-xie/rethnicity.svg)](https://github.com/fangzhou-xie/rethnicity/commits/main)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
+[![CRAN\_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
 [![Build
 Status](https://app.travis-ci.com/fangzhou-xie/rethnicity.svg?branch=main)](https://travis-ci.com/github/fangzhou-xie/rethnicity)
 [![License:
@@ -20,6 +26,23 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 
 The goal of rethnicity is to provide a method to predict ethnicity from
 names of people.
+
+## WARNING!
+
+I created this package hoping to help applied researchers on their
+studies regarding ethnic bias and discrimination, and potentially
+eliminate the racial and ethnic disparities. By using this package, you
+agree to the following:
+
+1.  You **will NOT** use this package for purposes other than academic
+    research.
+2.  You **will NOT** disclose the predicted ethnic group to the public,
+    given the names data you might have.
+3.  You **will NOT** discriminate anyone on the basis of race and color,
+    by using the methods provided by this package.
+    <!-- 4. You **agree** to advocate racial equality. -->
+
+Again, you should use the package responsibly.
 
 ## Installation
 
@@ -104,7 +127,7 @@ start_time <- Sys.time()
 p <- predict_ethnicity(lastnames = lastnames, method = "lastname", threads = 20)
 end_time <- Sys.time()
 end_time - start_time
-#> Time difference of 9.93066 secs
+#> Time difference of 9.891877 secs
 ```
 
 For most use cases that I can imagine, the default setting
@@ -131,3 +154,7 @@ when increasing the number of threads.
 
 Processing a million names only spent around 10 seconds for us. I would
 call this pretty fast.
+
+# License
+
+MIT License
