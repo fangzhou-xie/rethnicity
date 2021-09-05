@@ -46,7 +46,8 @@ predict_ethnicity <- function(firstnames = NULL, lastnames = NULL, method = "ful
       }
     }
     
-    model_path <- here::here("data-raw/fullname_aligned_distill.json")
+    # model_path <- here::here("data-raw/fullname_aligned_distill.json")
+    model_path <- system.file("models", "fullname_aligned_distill.json", package = "rethnicity", mustWork = TRUE)
     # df <- predict_ethnicity_fullname(firstnames, lastnames, threads)
     p <- predict_fullname(tolower(firstnames), tolower(lastnames), threads, model_path)
     p <- p / rowSums(p)
@@ -69,7 +70,8 @@ predict_ethnicity <- function(firstnames = NULL, lastnames = NULL, method = "ful
       }
     }
     
-    model_path <- here::here("data-raw/lastname_distill.json")
+    # model_path <- here::here("data-raw/lastname_distill.json")
+    model_path <- system.file("models", "lastname_distill.json", package = "rethnicity", mustWork = TRUE)
     # df <- predict_ethnicity_lastname(lastnames, threads)
     p <- predict_lastname(tolower(lastnames), threads, model_path)
     p <- p / rowSums(p)

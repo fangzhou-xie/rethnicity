@@ -20,8 +20,7 @@ LinkingTo:
     RcppEigen,
     RcppThread
 Imports: 
-    Rcpp,
-    here
+    Rcpp
 Suggests: 
     knitr,
     rmarkdown,
