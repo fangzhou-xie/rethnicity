@@ -1,7 +1,7 @@
 #' Predict ethnicity from names.
 #' 
-#' @param firstnames A character vector of firstnames. Default to NULL. Only use this if you are using 'method' = 'fullname'.
-#' @param lastnames A character vector of lastnames. Default to NULL. Use this in both 'fullname' and 'lastname' methods.
+#' @param firstnames A character vector of first names. Default to NULL. Only use this if you are using 'method' = 'fullname'.
+#' @param lastnames A character vector of last names. Default to NULL. Use this in both 'fullname' and 'lastname' methods.
 #' @param method "fullname" or "lastname". Inference method to choose from.
 #' @param threads single integer. Number of threads to use for multi-threading.
 #' @param na.rm TRUE or FALSE (boolean). If TRUE, then the NAs will be removed; if FALSE, then return error if there is NA in the arguments.

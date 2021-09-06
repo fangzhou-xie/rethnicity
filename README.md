@@ -127,7 +127,7 @@ start_time <- Sys.time()
 p <- predict_ethnicity(lastnames = lastnames, method = "lastname", threads = 20)
 end_time <- Sys.time()
 end_time - start_time
-#> Time difference of 9.891877 secs
+#> Time difference of 9.711799 secs
 ```
 
 For most use cases that I can imagine, the default setting
@@ -135,7 +135,7 @@ For most use cases that I can imagine, the default setting
 routines for the processing. If you have very large dataset, or if you
 have a powerful machine, or if you just want to run the code faster, you
 can set the `threads` argument to be bigger than 0 and you should
-obeserve performance boost.
+observe performance boost.
 
 Note that I have 24-thread desktop and hence choosing 20 threads to work
 on this. You may need to wisely choose the appropriate number of threads

@@ -8,11 +8,19 @@
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
 
-There was 1 NOTE:
+There was 3 NOTEs:
 
-* This is the initial submission of the package.
-* checking dependencies in R code ... NOTE
-  Namespace in Imports field not imported from: 'R6'
+* checking CRAN incoming feasibility ... NOTE
 
-  R6 is a build-time dependency.
+  This is the initial submission of the package.
 
+* checking top-level files ... NOTE
+  
+  The `data-raw` folder is to hold some codes and data, which should not be made available to users.
+  There are also header-only C++ source codes that should be included under `include` directory.
+  Plus this `cran-comments.md` file.
+
+* checking installed package size ... NOTE
+  
+  The compiled binary is relatively large, since LSTM models are compiled in C++ without linking to Keras or 
+  any other dependencies.

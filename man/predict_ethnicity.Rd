@@ -13,9 +13,9 @@ predict_ethnicity(
 )
 }
 \arguments{
-\item{firstnames}{A character vector of firstnames. Default to NULL. Only use this if you are using 'method' = 'fullname'.}
+\item{firstnames}{A character vector of first names. Default to NULL. Only use this if you are using 'method' = 'fullname'.}
 
-\item{lastnames}{A character vector of lastnames. Default to NULL. Use this in both 'fullname' and 'lastname' methods.}
+\item{lastnames}{A character vector of last names. Default to NULL. Use this in both 'fullname' and 'lastname' methods.}
 
 \item{method}{"fullname" or "lastname". Inference method to choose from.}
 
