@@ -19,7 +19,7 @@
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
 [![CRAN\_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
 [![Build
-Status](https://app.travis-ci.com/fangzhou-xie/rethnicity.svg?branch=main)](https://travis-ci.com/github/fangzhou-xie/rethnicity)
+Status](https://app.travis-ci.com/fangzhou-xie/rethnicity.svg?branch=main)](https://app.travis-ci.com/github/fangzhou-xie/rethnicity)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
@@ -127,7 +127,7 @@ start_time <- Sys.time()
 p <- predict_ethnicity(lastnames = lastnames, method = "lastname", threads = 20)
 end_time <- Sys.time()
 end_time - start_time
-#> Time difference of 9.711799 secs
+#> Time difference of 9.897331 secs
 ```
 
 For most use cases that I can imagine, the default setting

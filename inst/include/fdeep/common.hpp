@@ -7,13 +7,13 @@
 #pragma once
 
 #if defined(__GNUC__) || defined(__GNUG__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wctor-dtor-privacy"
-#pragma GCC diagnostic ignored "-Wold-style-cast"
-#pragma GCC diagnostic ignored "-Wsign-conversion"
-#pragma GCC diagnostic ignored "-Weffc++"
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wshadow"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Wctor-dtor-privacy"
+// #pragma GCC diagnostic ignored "-Wold-style-cast"
+// #pragma GCC diagnostic ignored "-Wsign-conversion"
+// #pragma GCC diagnostic ignored "-Weffc++"
+// #pragma GCC diagnostic ignored "-Wconversion"
+// #pragma GCC diagnostic ignored "-Wshadow"
 #endif
 #if defined _MSC_VER
 #pragma warning(push)
@@ -25,7 +25,7 @@
 #pragma warning(pop)
 #endif
 #if defined(__GNUC__) || defined(__GNUG__)
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
 
 #include <fplus/fplus.hpp>

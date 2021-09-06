@@ -248,8 +248,8 @@ namespace fplus {
 namespace utils {
 
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Weffc++"
 #endif
 
 /**
@@ -534,7 +534,7 @@ typename std::add_rvalue_reference<T>::type rt_val() noexcept
 }
 
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
 
 }
@@ -2348,8 +2348,8 @@ namespace internal
 {
 
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Weffc++"
 #endif
 
 template<class T> struct has_order : public std::false_type {};
@@ -2386,7 +2386,7 @@ template<class Key, class T, class Compare, class Alloc, class NewKey, class New
 template<class Key, class T, class Compare, class Alloc, class NewKey, class NewVal> struct SameMapTypeNewTypes<std::unordered_map<Key, T, Compare, Alloc>, NewKey, NewVal> { typedef typename std::unordered_map<NewKey, NewVal> type; };
 
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
 
 template<
