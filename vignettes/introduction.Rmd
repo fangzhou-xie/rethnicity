@@ -53,7 +53,7 @@ By having both first names and last names, we can achieve higher accuracy than o
 The syntax is similar to what we have seen from above.
 
 ```{r}
-predict_ethnicity(firstnames = "Morgan", lastnames = "Freeman", method = "fullname")
+predict_ethnicity(firstnames = "Samuel", lastnames = "Jackson", method = "fullname")
 ```
 
 ## What if I have multiple names?
@@ -61,8 +61,8 @@ predict_ethnicity(firstnames = "Morgan", lastnames = "Freeman", method = "fullna
 Cool. I got you covered. Just use vectors as input.
 
 ```{r}
-firstnames <- c("Morgan", "Will")
-lastnames <- c("Freeman", "Smith")
+firstnames <- c("Samuel", "Will")
+lastnames <- c("Jackson", "Smith")
 predict_ethnicity(lastnames = lastnames, method = "lastname")
 predict_ethnicity(firstnames = firstnames, lastnames = lastnames, method = "fullname")
 ```

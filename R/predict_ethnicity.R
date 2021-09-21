@@ -7,9 +7,7 @@
 #' @param na.rm TRUE or FALSE (boolean). If TRUE, then the NAs will be removed; if FALSE, then return error if there is NA in the arguments.
 #' @return data.frame with probability of being each ethnic group and the predicted group (one with highest probability)
 #' @examples
-#' \dontrun{
-#' predict_ethnicity(firstnames = "Alan", lastnames = "Turing", threads = 0)
-#' }
+#' predict_ethnicity(firstnames = "Alan", lastnames = "Turing")
 #' 
 #' @export
 predict_ethnicity <- function(firstnames = NULL, lastnames = NULL, method = "fullname", threads = 0, na.rm = FALSE) {

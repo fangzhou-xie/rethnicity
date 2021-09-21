@@ -5,6 +5,7 @@ This is a resubmission. In this version, I have:
 * put the `include` folder under `inst` folder, as is the usual practice
 * also commented out the warning-suppressing pragmas in the source header files
 * add `cran-comments.md` into `.Rbuildignore`
+* modify the description field in DESCRIPTION file
 
 ## Test environments
 * local Fedora 33, R 4.0.5

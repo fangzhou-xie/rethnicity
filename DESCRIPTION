@@ -6,7 +6,8 @@ Authors@R:
     c(person(given = "Fangzhou", family = "Xie", role = c("aut", "cre"), 
     email = "fangzhou.xie@rutgers.edu", comment = c(ORCID = "0000-0001-7702-093X")))
 Maintainer: Fangzhou Xie <fangzhou.xie@rutgers.edu>
-Description: Predict ethnic groups (races) from names.
+Description: Implementation of the ethnicity prediction method, described 
+    in "Rethnicity: Predicting Ethnicity from Names" by Fangzhou Xie (2021) <arXiv:2109.09228>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.1

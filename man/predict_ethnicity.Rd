@@ -30,8 +30,6 @@ data.frame with probability of being each ethnic group and the predicted group (
 Predict ethnicity from names.
 }
 \examples{
-\dontrun{
-predict_ethnicity(firstnames = "Alan", lastnames = "Turing", threads = 0)
-}
+predict_ethnicity(firstnames = "Alan", lastnames = "Turing")
 
 }
