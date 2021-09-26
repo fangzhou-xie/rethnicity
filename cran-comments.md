@@ -1,11 +1,6 @@
-## Resubmission
+## Update Submission
 
-This is a resubmission. In this version, I have:
-
-* put the `include` folder under `inst` folder, as is the usual practice
-* also commented out the warning-suppressing pragmas in the source header files
-* add `cran-comments.md` into `.Rbuildignore`
-* modify the description field in DESCRIPTION file
+* fix the WARNs by CRAN checks on the vignette building process
 
 ## Test environments
 * local Fedora 33, R 4.0.5
@@ -20,6 +15,11 @@ There were no ERRORs or WARNINGs.
 
 There was 1 NOTE:
 
-* checking CRAN incoming feasibility ... NOTE
+* checking installed package size ... NOTE
+    installed size is 28.0Mb
+    sub-directories of 1Mb or more:
+      include   1.9Mb
+      libs     24.5Mb
+      models    1.6Mb
 
-  This is the initial submission of the package.
+* The LSTM model is built natively in C++ and the result binary is large.
