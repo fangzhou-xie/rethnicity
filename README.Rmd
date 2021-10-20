@@ -69,6 +69,23 @@ devtools::install_github("fangzhou-xie/rethnicity")
 There is a [vignette](https://fangzhou-xie.github.io/rethnicity/articles/introduction.html) that discusses
 how to use this package.
 
+## Documentation on Methodology
+
+The complete description of the methodology is on [arxiv](https://arxiv.org/abs/2109.09228) and please cite it as:
+
+```
+@article{xie2021,
+  title = {Rethnicity: Predicting {{Ethnicity}} from {{Names}}},
+  shorttitle = {Predicting {{Ethnicity}} from {{Names}} with Rethnicity},
+  author = {Xie, Fangzhou},
+  year = {2021},
+  month = sep,
+  journal = {arXiv:2109.09228 [cs]},
+  eprint = {2109.09228},
+  eprinttype = {arxiv},
+}
+```
+
 ## License
 
 MIT License
