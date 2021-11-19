@@ -16,12 +16,11 @@
 <!-- # ) -->
 <!-- # ``` -->
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
-[![CRAN\_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
-[![Build
-Status](https://app.travis-ci.com/fangzhou-xie/rethnicity.svg?branch=main)](https://app.travis-ci.com/github/fangzhou-xie/rethnicity)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
+[![CRAN_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![R-CMD-check](https://github.com/fangzhou-xie/rethnicity/workflows/R-CMD-check/badge.svg)](https://github.com/fangzhou-xie/rethnicity/actions)
 <!-- badges: end -->
 
 The goal of rethnicity is to provide a method to predict ethnicity from

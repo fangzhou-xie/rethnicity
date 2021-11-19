@@ -1,9 +1,0 @@
-home:
-  title: An R package to predict ethnicity from names
-  description: This package provides a function to predict ethnicity from names of people.
-
-template:
-  params:
-    bootswatch: flatly
-
-url: https://fangzhou-xie.github.io/rethnicity
