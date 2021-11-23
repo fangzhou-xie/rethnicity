@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rethnicity</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -54,6 +54,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/advanced_usage.html">Using Customized Models</a>
+    </li>
+    <li>
       <a href="../articles/introduction.html">Introduction to `rethnicity` package</a>
     </li>
   </ul>
@@ -85,7 +88,7 @@
       <h1 data-toc-skip>Introduction to <code>rethnicity</code> package</h1>
                         <h4 class="author">Fangzhou Xie</h4>
             
-            <h4 class="date">November 19, 2021</h4>
+            <h4 class="date">November 23, 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fangzhou-xie/rethnicity/blob/master/vignettes/introduction.Rmd"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -97,11 +100,15 @@
 <p>In this package, I aim to provide a function that could predict ethnicity (race) from names.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fangzhou-xie/rethnicity">rethnicity</a></span><span class="op">)</span>
-<span class="co">#&gt; ###########################################################################################</span>
-<span class="co">#&gt; The method provided by this package has its limitations and anyone must use them cautiously and responsibly.</span>
-<span class="co">#&gt; You should also agree that you only intend to use the method for academic research purpose and not for commercial use.</span>
-<span class="co">#&gt; You would also agree NOT to discriminate anyone based on race or color or any characteristic, with the information provided by this package.</span>
-<span class="co">#&gt; ###########################################################################################</span></code></pre></div>
+<span class="co">#&gt; ══ WARNING! ════════════════════════════════════════════════════════════════════</span>
+<span class="co">#&gt; The method provided by this package has its limitations and anyone must use</span>
+<span class="co">#&gt; them cautiously and responsibly. You should also agree that you only intend to</span>
+<span class="co">#&gt; use the method for academic research purpose and not for commercial use. You</span>
+<span class="co">#&gt; would also agree NOT to discriminate anyone based on race or color or any</span>
+<span class="co">#&gt; characteristic, with the information provided by this package. Please refer to</span>
+<span class="co">#&gt; the documentation for details:</span>
+<span class="co">#&gt; https://fangzhou-xie.github.io/rethnicity/index.html</span>
+<span class="co">#&gt; ════════════════════════════════════════════════════════════════════════════════</span></code></pre></div>
 <div id="warning" class="section level1">
 <h1 class="hasAnchor">
 <a href="#warning" class="anchor"></a>WARNING!</h1>
@@ -165,7 +172,7 @@
 <span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predict_ethnicity.html">predict_ethnicity</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="va">firstnames</span>, lastnames <span class="op">=</span> <span class="va">lastnames</span>, threads <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span>
 <span class="va">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">end_time</span> <span class="op">-</span> <span class="va">start_time</span>
-<span class="co">#&gt; Time difference of 11.66621 secs</span></code></pre></div>
+<span class="co">#&gt; Time difference of 14.05424 secs</span></code></pre></div>
 <p>Processing ten thousands names only spent around 0.64 seconds for us. I would call this pretty fast.</p>
 <p>For most use cases that I can imagine, the default setting (<code>threads = 0</code>) should be fast enough since we are leveraging C++ routines for the processing. If you have very large dataset, or if you have a powerful machine, or if you just want to run the code faster, you can set the <code>threads</code> argument to be bigger than 0 and you should observe performance boost.</p>
 <p>You may need to wisely choose the appropriate number of threads for the job. In general, the more threads you have, the faster it should run. But the relationship is not linear, as there will be more overhead when increasing the number of threads. In the example, I was choosing the number of threads by the maximum number minus 2 (24 - 2 = 22).</p>

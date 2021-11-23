@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • rethnicity</title>
+<title>Predict ethnicity from full name — predict_fullname • rethnicity</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,10 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Predict ethnicity from full name — predict_fullname" />
+<meta property="og:description" content="Predicts ethnicity from first names and last names, using self-trained model with customized labels.
+This is designed for advanced users who wish to use their own models. 
+For most use cases, use [predict_ethnicity()] for prediction." />
 
 
 
@@ -58,7 +61,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -125,20 +128,64 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Predict ethnicity from full name</h1>
+    <small class="dont-index">Source: <a href='https://github.com/fangzhou-xie/rethnicity/blob/master/R/predict_ethnicity.R'><code>R/predict_ethnicity.R</code></a></small>
+    <div class="hidden name"><code>predict_fullname.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="advanced_usage.html">Using Customized Models</a></dt>
-        <dd></dt>
-        <dt><a href="introduction.html">Introduction to `rethnicity` package</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Predicts ethnicity from first names and last names, using self-trained model with customized labels.
+This is designed for advanced users who wish to use their own models. 
+For most use cases, use [predict_ethnicity()] for prediction.</p>
     </div>
+
+    <pre class="usage"><span class='fu'>predict_fullname</span><span class='op'>(</span>
+  <span class='va'>firstnames</span>,
+  <span class='va'>lastnames</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  threads <span class='op'>=</span> <span class='fl'>0L</span>,
+  labels <span class='op'>=</span> <span class='cn'>NULL</span>,
+  model_path <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>firstnames</th>
+      <td><p>character vector, first names</p></td>
+    </tr>
+    <tr>
+      <th>lastnames</th>
+      <td><p>character vector, last names</p></td>
+    </tr>
+    <tr>
+      <th>na.rm</th>
+      <td><p>bool, default to FALSE, whether to remove the na in the `lastnames`</p></td>
+    </tr>
+    <tr>
+      <th>threads</th>
+      <td><p>int, number of threads for multi-threading</p></td>
+    </tr>
+    <tr>
+      <th>labels</th>
+      <td><p>character vector, labels of the classification model, needs to be in the same order as the trained model</p></td>
+    </tr>
+    <tr>
+      <th>model_path</th>
+      <td><p>character file path, the path to the trained model in .json format (converted from Keras by frugally-deep)</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>data.frame with predicted probability and predicted ethnicity</p>
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

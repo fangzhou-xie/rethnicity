@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Predict ethnicity from names. — predict_ethnicity" />
-<meta property="og:description" content="Predict ethnicity from names." />
+<meta property="og:description" content="Predict ethnicity either by last names or both first and last names. This is the default and recommended method for prediction." />
 
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rethnicity</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -94,6 +94,9 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/advanced_usage.html">Using Customized Models</a>
+    </li>
     <li>
       <a href="../articles/introduction.html">Introduction to `rethnicity` package</a>
     </li>
@@ -129,7 +132,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Predict ethnicity from names.</p>
+    <p>Predict ethnicity either by last names or both first and last names. This is the default and recommended method for prediction.</p>
     </div>
 
     <pre class="usage"><span class='fu'>predict_ethnicity</span><span class='op'>(</span>
@@ -161,7 +164,7 @@
     </tr>
     <tr>
       <th>na.rm</th>
-      <td><p>TRUE or FALSE (boolean). If TRUE, then the NAs will be removed; if FALSE, then return error if there is NA in the arguments.</p></td>
+      <td><p>TRUE or FALSE (bool). If TRUE, then the NAs will be removed; if FALSE, then return error if there is NA in the arguments.</p></td>
     </tr>
     </table>
 
