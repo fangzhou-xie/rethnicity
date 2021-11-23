@@ -21,13 +21,13 @@ predict_ethnicity(
 
 \item{threads}{single integer. Number of threads to use for multi-threading.}
 
-\item{na.rm}{TRUE or FALSE (boolean). If TRUE, then the NAs will be removed; if FALSE, then return error if there is NA in the arguments.}
+\item{na.rm}{TRUE or FALSE (bool). If TRUE, then the NAs will be removed; if FALSE, then return error if there is NA in the arguments.}
 }
 \value{
 data.frame with probability of being each ethnic group and the predicted group (one with highest probability)
 }
 \description{
-Predict ethnicity from names.
+Predict ethnicity either by last names or both first and last names. This is the default and recommended method for prediction.
 }
 \examples{
 predict_ethnicity(firstnames = "Alan", lastnames = "Turing")

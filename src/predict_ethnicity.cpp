@@ -8,7 +8,7 @@ using namespace Rcpp;
 #include <fdeep/fdeep.hpp>
 #include "string_to_id.h"
 
-// [[Rcpp::export]]
+// [[Rcpp::export(name = "predict_lastname_cpp")]]
 Eigen::MatrixXd predict_lastname(std::vector<std::string> strings, int threads, std::string model_path) {
   // init float vector
   std::vector<std::vector<double>> results(strings.size());
@@ -49,7 +49,7 @@ Eigen::MatrixXd predict_lastname(std::vector<std::string> strings, int threads, 
   return(mat);
 }
 
-// [[Rcpp::export]]
+// [[Rcpp::export(name = "predict_fullname_cpp")]]
 Eigen::MatrixXd predict_fullname(std::vector<std::string> strings_fn, std::vector<std::string> strings_ln, int threads, std::string model_path) {
   // init float vector
   std::vector<std::vector<double>> results(strings_fn.size());
