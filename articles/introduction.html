@@ -88,7 +88,7 @@
       <h1 data-toc-skip>Introduction to <code>rethnicity</code> package</h1>
                         <h4 class="author">Fangzhou Xie</h4>
             
-            <h4 class="date">November 23, 2021</h4>
+            <h4 class="date">November 24, 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fangzhou-xie/rethnicity/blob/master/vignettes/introduction.Rmd"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -172,7 +172,7 @@
 <span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predict_ethnicity.html">predict_ethnicity</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="va">firstnames</span>, lastnames <span class="op">=</span> <span class="va">lastnames</span>, threads <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span>
 <span class="va">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">end_time</span> <span class="op">-</span> <span class="va">start_time</span>
-<span class="co">#&gt; Time difference of 14.05424 secs</span></code></pre></div>
+<span class="co">#&gt; Time difference of 12.05706 secs</span></code></pre></div>
 <p>Processing ten thousands names only spent around 0.64 seconds for us. I would call this pretty fast.</p>
 <p>For most use cases that I can imagine, the default setting (<code>threads = 0</code>) should be fast enough since we are leveraging C++ routines for the processing. If you have very large dataset, or if you have a powerful machine, or if you just want to run the code faster, you can set the <code>threads</code> argument to be bigger than 0 and you should observe performance boost.</p>
 <p>You may need to wisely choose the appropriate number of threads for the job. In general, the more threads you have, the faster it should run. But the relationship is not linear, as there will be more overhead when increasing the number of threads. In the example, I was choosing the number of threads by the maximum number minus 2 (24 - 2 = 22).</p>
