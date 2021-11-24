@@ -1,14 +1,12 @@
 ## Update Submission
 
-* fix the WARNs by CRAN checks on the vignette building process
+* add two more functions and other updates
 
 ## Test environments
-* local Fedora 33, R 4.0.5
-* Xenial R: oldrel (Travis CI)
-* Xenial R: release (Travis CI)
-* Xenial R: devel (Travis CI)
-* win-builder (devel and release)
-* Solaris, macOS High Sierra, Windows-x86_64-devel (rhub)
+* local Fedora 33, R 4.1.1
+* Github action
+* rhub
+* win-builder
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
