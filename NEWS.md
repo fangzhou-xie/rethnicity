@@ -1,8 +1,8 @@
-# rethnicity (0.2.0)
+# rethnicity (0.2.1)
 * add `predict_lastname()` and `predict_fullname()` functions as lower-level interfaces
 * they also allow for customized models
 * add another vignette on how to run inference on the customized models
-* change the License from MIT to Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) to prohibit commercial uses
+* change the License from MIT to CC BY-NC-SA 4.0 to prohibit commercial uses
 * modify the startup messages to notify users to use the package wisely
 * remove docs/ folder, since we are using github actions to automate the process
 

@@ -1,6 +1,7 @@
 ## Update Submission
 
 * add two more functions and other updates
+* edit License to: CC BY-NC-SA 4.0
 
 ## Test environments
 * local Fedora 33, R 4.1.1

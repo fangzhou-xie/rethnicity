@@ -86,8 +86,8 @@ The complete description of the methodology is on
 
 ## License
 
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-International License.
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 This license was chosen to prohibit commercial usage, while still being
 free and accessible for non-commercial academic uses.
