@@ -1,4 +1,4 @@
-# rethnicity (0.2.1)
+rethnicity (0.2.2)
 * add `predict_lastname()` and `predict_fullname()` functions as lower-level interfaces
 * they also allow for customized models
 * add another vignette on how to run inference on the customized models
