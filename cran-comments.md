@@ -2,6 +2,9 @@
 
 * add two more functions and other updates
 * edit License to: CC BY-NC-SA 4.0
+* reason for changing License: as pointed out by a journal referee: MIT License doesn't not prevent from commercial use
+* and the prediction of ethnicity from names might be misused by people and lead to discrimination
+* So I changed it to CC BY-NC-SA 4.0
 
 ## Test environments
 * local Fedora 33, R 4.1.1
