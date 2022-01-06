@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
+pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   advanced_usage: advanced_usage.html
   introduction: introduction.html
-last_built: 2021-11-29T15:21Z
+last_built: 2022-01-06T00:46Z
 
