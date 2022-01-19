@@ -40,7 +40,8 @@ agree to the following:
     by using the methods provided by this package.
 4.  You **understand** that the method cannot make predictions 100%
     correct, and you should be cautious about the results.
-    <!-- 4. You **agree** to advocate racial equality. -->
+5.  You **will not** use the information to study individuals, but
+    rather to study populations in the aggregate.
 
 Again, you should use the package responsibly and please refer to the
 [methodology paper](#documentation-on-methodology) for details.
