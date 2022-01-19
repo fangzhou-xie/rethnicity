@@ -84,7 +84,7 @@
       <h1 data-toc-skip>Using Customized Models</h1>
                         <h4 data-toc-skip class="author">Fangzhou Xie</h4>
             
-            <h4 data-toc-skip class="date">January 06, 2022</h4>
+            <h4 data-toc-skip class="date">January 19, 2022</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fangzhou-xie/rethnicity/blob/HEAD/vignettes/advanced_usage.Rmd" class="external-link"><code>vignettes/advanced_usage.Rmd</code></a></small>
       <div class="hidden name"><code>advanced_usage.Rmd</code></div>
@@ -104,34 +104,34 @@
 <span class="co">#&gt; the documentation for details:</span>
 <span class="co">#&gt; https://fangzhou-xie.github.io/rethnicity/index.html</span>
 <span class="co">#&gt; ════════════════════════════════════════════════════════════════════════════════</span></code></pre></div>
-<div class="section level1">
-<h1 id="design-of-the-package">Design of the Package<a class="anchor" aria-label="anchor" href="#design-of-the-package"></a>
-</h1>
+<div class="section level2">
+<h2 id="design-of-the-package">Design of the Package<a class="anchor" aria-label="anchor" href="#design-of-the-package"></a>
+</h2>
 <p>I built this package to help applied researchers for research on ethnic equality/inequality. More specifically, this package provides a race-prediction method based on names. I designed the package in such way that the method is empowered by deep learning models, without the need to install the deep learning libraries, the installations of which are usually a daunting task. Hence, the methods provided in this package are not designed to be updated/fine-tuned/trained on custom datasets. This is the trade-off one has to be willing to make for the ease of use.</p>
 <p>That said, from version <code>0.2.0</code> onwards, I provide two additional lower-level functions: <code>predict_fullname</code> and <code>predict_lastname</code>, which would allow users to provided their customized models. (There is only one function prior to <code>v0.2.0</code>: <code>predict_ethnicity</code>. This function is still the RECOMMENDED one to use for most people.)</p>
 </div>
-<div class="section level1">
-<h1 id="usage-on-customized-models">Usage on Customized Models<a class="anchor" aria-label="anchor" href="#usage-on-customized-models"></a>
-</h1>
-<p>Since the package disables training by design, you need to train your own model in Keras and then convert the trained model to <code>.json</code> format by the <a href="https://github.com/Dobiasd/frugally-deep" class="external-link">frugally-deep</a> project.</p>
 <div class="section level2">
-<h2 id="train-the-model-in-keras">Train the model in Keras<a class="anchor" aria-label="anchor" href="#train-the-model-in-keras"></a>
+<h2 id="usage-on-customized-models">Usage on Customized Models<a class="anchor" aria-label="anchor" href="#usage-on-customized-models"></a>
 </h2>
+<p>Since the package disables training by design, you need to train your own model in Keras and then convert the trained model to <code>.json</code> format by the <a href="https://github.com/Dobiasd/frugally-deep" class="external-link">frugally-deep</a> project.</p>
+<div class="section level3">
+<h3 id="train-the-model-in-keras">Train the model in Keras<a class="anchor" aria-label="anchor" href="#train-the-model-in-keras"></a>
+</h3>
 <p>If you are reading this vignette, most likely you know what you are doing and you must have heard <code>Keras</code>. Otherwise, you will have to stick to the default method <code>predict_ethnicity</code>.</p>
 <p>You can refer to the following links to see how I trained the models and create your own version: <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/data-raw/rethnicity_singlechar_distill_fullname_aligned.ipynb" class="external-link">fullname model</a>, <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/data-raw/rethnicity_singlechar_distill_lastname.ipynb" class="external-link">lastname model</a>.</p>
 <p>Before training the model, you need to process your dataset and you will need to use <code>keras.utils.to_categorical()</code> to transform the outcome variable into integers and you need to know the mapping between them. For example, <code>0, 1, 2, 3</code> refer to <code>asian, black, hispanic, white</code> respectively. You will need this and we will call it <code>labels = c("asian", "black", "hispanic", "white")</code>.</p>
 <p>Just remember to save the model without the optimizers (more on the <a href="https://github.com/Dobiasd/frugally-deep" class="external-link"><code>frugally-deep</code> website</a>):</p>
 <pre><code><span class="fu">model.save</span><span class="op">(</span><span class="st">'keras_model.h5'</span>, include_optimizer<span class="op">=</span><span class="va">False</span><span class="op">)</span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="convert-the-model-to--json">Convert the Model to <code>.json</code><a class="anchor" aria-label="anchor" href="#convert-the-model-to--json"></a>
-</h2>
+<div class="section level3">
+<h3 id="convert-the-model-to--json">Convert the Model to <code>.json</code><a class="anchor" aria-label="anchor" href="#convert-the-model-to--json"></a>
+</h3>
 <p>Then, use the <a href="https://github.com/Dobiasd/frugally-deep/tree/master/keras_export" class="external-link"><code>convert_model.py</code> script</a> to convert your model into <code>.json</code> format. This is what I did as well. You will encounter an error in the conversion process, if you include the optimizers in the saved model.</p>
 <pre><code>python convert_model.py keras_model.h5 keras_model.json</code></pre>
 </div>
-<div class="section level2">
-<h2 id="predict-with-your-own-model">Predict with Your Own Model<a class="anchor" aria-label="anchor" href="#predict-with-your-own-model"></a>
-</h2>
+<div class="section level3">
+<h3 id="predict-with-your-own-model">Predict with Your Own Model<a class="anchor" aria-label="anchor" href="#predict-with-your-own-model"></a>
+</h3>
 <p>Now you have the model trained and converted and you need the file path of this model file. I am loading the default models without training new ones.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># remember the list of labels we mentioned?</span>
@@ -166,7 +166,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
