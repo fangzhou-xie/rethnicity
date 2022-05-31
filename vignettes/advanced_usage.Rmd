@@ -29,7 +29,7 @@ to install the deep learning libraries, the installations of which are usually a
 Hence, the methods provided in this package are not designed to be updated/fine-tuned/trained on custom datasets.
 This is the trade-off one has to be willing to make for the ease of use.
 
-That said, from version `0.2.0` onwards, I provide two additional lower-level functions: `predict_fullname` and
+That said, from version `0.2.0` onward, I provide two additional lower-level functions: `predict_fullname` and
 `predict_lastname`, which would allow users to provided their customized models. 
 (There is only one function prior to `v0.2.0`: `predict_ethnicity`. This function is still the RECOMMENDED one to use for most people.)
 

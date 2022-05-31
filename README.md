@@ -72,7 +72,7 @@ that discusses how to use this package.
 ## Documentation on Methodology
 
 The complete description of the methodology is on
-[arxiv](https://arxiv.org/abs/2109.09228) and published on
+[arXiv](https://arxiv.org/abs/2109.09228) and published on
 [SoftwareX](https://www.sciencedirect.com/science/article/pii/S2352711021001874)
 and please cite it as:
 

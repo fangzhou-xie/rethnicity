@@ -1,13 +1,11 @@
 ## Update Submission
 
-* add two more functions and other updates
-* edit License to: CC BY-NC-SA 4.0
-* reason for changing License: as pointed out by a journal referee: MIT License doesn't not prevent from commercial use
-* and the prediction of ethnicity from names might be misused by people and lead to discrimination
-* So I changed it to CC BY-NC-SA 4.0
+* Fix r-devel-linux-x86_64-debian-clang installation error
+* thanks to Thomas Nagler (https://github.com/fangzhou-xie/rethnicity/pull/6)
+* update Description field in the metadata
 
 ## Test environments
-* local Fedora 33, R 4.1.1
+* local macOS, R 4.1.3
 * Github action
 * rhub
 * win-builder

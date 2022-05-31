@@ -1,16 +1,18 @@
 Package: rethnicity
 Type: Package
 Title: Predicting Ethnic Group from Names
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: 
     c(person(given = "Fangzhou", family = "Xie", role = c("aut", "cre"), 
     email = "fangzhou.xie@rutgers.edu", comment = c(ORCID = "0000-0001-7702-093X")))
 Maintainer: Fangzhou Xie <fangzhou.xie@rutgers.edu>
-Description: Implementation of the ethnicity prediction method, described 
-    in "Rethnicity: Predicting Ethnicity from Names" by Fangzhou Xie (2021) <arXiv:2109.09228>.
+Description: Implementation of the race/ethnicity prediction method, described 
+    in "rethnicity: An R package for predicting ethnicity from names" 
+    by Fangzhou Xie (2022) <doi:10.1016/j.softx.2021.100965> and 
+    "Rethnicity: Predicting Ethnicity from Names" by Fangzhou Xie (2021) <arXiv:2109.09228>.
 License: CC BY-NC-SA 4.0
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 URL: https://github.com/fangzhou-xie/rethnicity
 BugReports: https://github.com/fangzhou-xie/rethnicity/issues
 Depends:
@@ -28,4 +30,5 @@ Suggests:
     magrittr,
     parallel
 VignetteBuilder: knitr
+Language: en-US
 Config/testthat/edition: 3

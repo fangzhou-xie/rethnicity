@@ -1,4 +1,8 @@
-rethnicity (0.2.2)
+# rethnicity (0.2.3)
+* update dependency on RcppThread >= 2.1.3 to fix the compilation error
+* update metadata of package
+
+# rethnicity (0.2.2)
 * add `predict_lastname()` and `predict_fullname()` functions as lower-level interfaces
 * they also allow for customized models
 * add another vignette on how to run inference on the customized models
