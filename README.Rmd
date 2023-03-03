@@ -52,13 +52,27 @@ Again, you should use the package responsibly and please refer to the [methodolo
 
 ## Installation
 
-You can install the released version of rethnicity from [CRAN](https://CRAN.R-project.org) with:
+I recommend using the wonderful package manager [`pak`](https://github.com/r-lib/pak) to install this package:
+
+``` r
+# first install `pak` if not yet installed
+# install.packages("pak")
+
+# install the CRAN version
+pak::pkg_install("rethnicity")
+
+# or install the Github development version
+pak::pkg_install("fangzhou-xie/rethnicity")
+```
+
+Of course, you can also install the package in the old way: 
+install the released version of rethnicity from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("rethnicity")
 ```
 
-You can install the development version from [GitHub](https://github.com/) with:
+Or the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
