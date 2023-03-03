@@ -16,7 +16,7 @@
 <!-- # ) -->
 <!-- # ``` -->
 
-[![R-CMD-check](https://github.com/fangzhou-xie/rethnicity/workflows/R-CMD-check/badge.svg)](https://github.com/fangzhou-xie/rethnicity/actions)
+[![R-CMD-check](https://github.com/fangzhou-xie/rethnicity/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fangzhou-xie/rethnicity/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
 [![CRAN_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
