@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rethnicity</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.4</span>
       </span>
     </div>
 
@@ -78,13 +78,14 @@
 
       
 
-      </header><script src="advanced_usage_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Using Customized Models</h1>
-                        <h4 data-toc-skip class="author">Fangzhou Xie</h4>
+                        <h4 data-toc-skip class="author">Fangzhou
+Xie</h4>
             
-            <h4 data-toc-skip class="date">May 31, 2022</h4>
+            <h4 data-toc-skip class="date">March 04, 2023</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fangzhou-xie/rethnicity/blob/HEAD/vignettes/advanced_usage.Rmd" class="external-link"><code>vignettes/advanced_usage.Rmd</code></a></small>
       <div class="hidden name"><code>advanced_usage.Rmd</code></div>
@@ -94,57 +95,86 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fangzhou-xie/rethnicity" class="external-link">rethnicity</a></span><span class="op">)</span>
-<span class="co">#&gt; ══ WARNING! ════════════════════════════════════════════════════════════════════</span>
-<span class="co">#&gt; The method provided by this package has its limitations and anyone must use</span>
-<span class="co">#&gt; them cautiously and responsibly. You should also agree that you only intend to</span>
-<span class="co">#&gt; use the method for academic research purpose and not for commercial use. You</span>
-<span class="co">#&gt; would also agree NOT to discriminate anyone based on race or color or any</span>
-<span class="co">#&gt; characteristic, with the information provided by this package. Please refer to</span>
-<span class="co">#&gt; the documentation for details:</span>
-<span class="co">#&gt; https://fangzhou-xie.github.io/rethnicity/index.html</span>
-<span class="co">#&gt; ════════════════════════════════════════════════════════════════════════════════</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fangzhou-xie/rethnicity" class="external-link">rethnicity</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ══ WARNING! ════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="co">#&gt; The method provided by this package has its limitations and anyone must use them cautiously and responsibly. You should also agree that you only intend to use the method for academic research purpose and not for commercial use. You would also agree NOT to discriminate anyone based on race or color or any characteristic, with the information provided by this package. Please refer to the documentation for details: https://fangzhou-xie.github.io/rethnicity/index.html</span></span>
+<span><span class="co">#&gt; ════════════════════════════════════════════════════════════════════════════════</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="design-of-the-package">Design of the Package<a class="anchor" aria-label="anchor" href="#design-of-the-package"></a>
 </h2>
-<p>I built this package to help applied researchers for research on ethnic equality/inequality. More specifically, this package provides a race-prediction method based on names. I designed the package in such way that the method is empowered by deep learning models, without the need to install the deep learning libraries, the installations of which are usually a daunting task. Hence, the methods provided in this package are not designed to be updated/fine-tuned/trained on custom datasets. This is the trade-off one has to be willing to make for the ease of use.</p>
-<p>That said, from version <code>0.2.0</code> onward, I provide two additional lower-level functions: <code>predict_fullname</code> and <code>predict_lastname</code>, which would allow users to provided their customized models. (There is only one function prior to <code>v0.2.0</code>: <code>predict_ethnicity</code>. This function is still the RECOMMENDED one to use for most people.)</p>
+<p>I built this package to help applied researchers for research on
+ethnic equality/inequality. More specifically, this package provides a
+race-prediction method based on names. I designed the package in such
+way that the method is empowered by deep learning models, without the
+need to install the deep learning libraries, the installations of which
+are usually a daunting task. Hence, the methods provided in this package
+are not designed to be updated/fine-tuned/trained on custom datasets.
+This is the trade-off one has to be willing to make for the ease of
+use.</p>
+<p>That said, from version <code>0.2.0</code> onward, I provide two
+additional lower-level functions: <code>predict_fullname</code> and
+<code>predict_lastname</code>, which would allow users to provided their
+customized models. (There is only one function prior to
+<code>v0.2.0</code>: <code>predict_ethnicity</code>. This function is
+still the RECOMMENDED one to use for most people.)</p>
 </div>
 <div class="section level2">
 <h2 id="usage-on-customized-models">Usage on Customized Models<a class="anchor" aria-label="anchor" href="#usage-on-customized-models"></a>
 </h2>
-<p>Since the package disables training by design, you need to train your own model in Keras and then convert the trained model to <code>.json</code> format by the <a href="https://github.com/Dobiasd/frugally-deep" class="external-link">frugally-deep</a> project.</p>
+<p>Since the package disables training by design, you need to train your
+own model in Keras and then convert the trained model to
+<code>.json</code> format by the <a href="https://github.com/Dobiasd/frugally-deep" class="external-link">frugally-deep</a>
+project.</p>
 <div class="section level3">
 <h3 id="train-the-model-in-keras">Train the model in Keras<a class="anchor" aria-label="anchor" href="#train-the-model-in-keras"></a>
 </h3>
-<p>If you are reading this vignette, most likely you know what you are doing and you must have heard <code>Keras</code>. Otherwise, you will have to stick to the default method <code>predict_ethnicity</code>.</p>
-<p>You can refer to the following links to see how I trained the models and create your own version: <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/data-raw/rethnicity_singlechar_distill_fullname_aligned.ipynb" class="external-link">fullname model</a>, <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/data-raw/rethnicity_singlechar_distill_lastname.ipynb" class="external-link">lastname model</a>.</p>
-<p>Before training the model, you need to process your dataset and you will need to use <code>keras.utils.to_categorical()</code> to transform the outcome variable into integers and you need to know the mapping between them. For example, <code>0, 1, 2, 3</code> refer to <code>asian, black, hispanic, white</code> respectively. You will need this and we will call it <code>labels = c("asian", "black", "hispanic", "white")</code>.</p>
-<p>Just remember to save the model without the optimizers (more on the <a href="https://github.com/Dobiasd/frugally-deep" class="external-link"><code>frugally-deep</code> website</a>):</p>
-<pre><code><span class="fu">model.save</span><span class="op">(</span><span class="st">'keras_model.h5'</span>, include_optimizer<span class="op">=</span><span class="va">False</span><span class="op">)</span></code></pre>
+<p>If you are reading this vignette, most likely you know what you are
+doing and you must have heard <code>Keras</code>. Otherwise, you will
+have to stick to the default method <code>predict_ethnicity</code>.</p>
+<p>You can refer to the following links to see how I trained the models
+and create your own version: <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/data-raw/rethnicity_singlechar_distill_fullname_aligned.ipynb" class="external-link">fullname
+model</a>, <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/data-raw/rethnicity_singlechar_distill_lastname.ipynb" class="external-link">lastname
+model</a>.</p>
+<p>Before training the model, you need to process your dataset and you
+will need to use <code>keras.utils.to_categorical()</code> to transform
+the outcome variable into integers and you need to know the mapping
+between them. For example, <code>0, 1, 2, 3</code> refer to
+<code>asian, black, hispanic, white</code> respectively. You will need
+this and we will call it
+<code>labels = c("asian", "black", "hispanic", "white")</code>.</p>
+<p>Just remember to save the model without the optimizers (more on the
+<a href="https://github.com/Dobiasd/frugally-deep" class="external-link"><code>frugally-deep</code>
+website</a>):</p>
+<pre><code><span><span class="fu">model.save</span><span class="op">(</span><span class="st">'keras_model.h5'</span>, include_optimizer<span class="op">=</span><span class="va">False</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="convert-the-model-to--json">Convert the Model to <code>.json</code><a class="anchor" aria-label="anchor" href="#convert-the-model-to--json"></a>
 </h3>
-<p>Then, use the <a href="https://github.com/Dobiasd/frugally-deep/tree/master/keras_export" class="external-link"><code>convert_model.py</code> script</a> to convert your model into <code>.json</code> format. This is what I did as well. You will encounter an error in the conversion process, if you include the optimizers in the saved model.</p>
+<p>Then, use the <a href="https://github.com/Dobiasd/frugally-deep/tree/master/keras_export" class="external-link"><code>convert_model.py</code>
+script</a> to convert your model into <code>.json</code> format. This is
+what I did as well. You will encounter an error in the conversion
+process, if you include the optimizers in the saved model.</p>
 <pre><code>python convert_model.py keras_model.h5 keras_model.json</code></pre>
 </div>
 <div class="section level3">
 <h3 id="predict-with-your-own-model">Predict with Your Own Model<a class="anchor" aria-label="anchor" href="#predict-with-your-own-model"></a>
 </h3>
-<p>Now you have the model trained and converted and you need the file path of this model file. I am loading the default models without training new ones.</p>
+<p>Now you have the model trained and converted and you need the file
+path of this model file. I am loading the default models without
+training new ones.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># remember the list of labels we mentioned?</span>
-<span class="va">labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"asian"</span>, <span class="st">"black"</span>, <span class="st">"hispanic"</span>, <span class="st">"white"</span><span class="op">)</span>
-
-<span class="co"># change to your own model file path</span>
-<span class="va">model_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"models"</span>, <span class="st">"fullname_aligned_distill.json"</span>, package <span class="op">=</span> <span class="st">"rethnicity"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="co"># run the prediction</span>
-<span class="fu"><a href="../reference/predict_fullname.html">predict_fullname</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="st">"Alan"</span>, lastnames <span class="op">=</span> <span class="st">"Turing"</span>, labels <span class="op">=</span> <span class="va">labels</span>, model_path <span class="op">=</span> <span class="va">model_path</span><span class="op">)</span>
-<span class="co">#&gt;   firstname lastname prob_asian prob_black prob_hispanic prob_white  race</span>
-<span class="co">#&gt; 1      Alan   Turing 0.02842531  0.2051059    0.02074103  0.7457278 white</span></code></pre></div>
-<p>In fact, if you tweak the code to predict gender from names, this will also work.</p>
+<code class="sourceCode R"><span><span class="co"># remember the list of labels we mentioned?</span></span>
+<span><span class="va">labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"asian"</span>, <span class="st">"black"</span>, <span class="st">"hispanic"</span>, <span class="st">"white"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># change to your own model file path</span></span>
+<span><span class="va">model_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"models"</span>, <span class="st">"fullname_aligned_distill.json"</span>, package <span class="op">=</span> <span class="st">"rethnicity"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># run the prediction</span></span>
+<span><span class="fu"><a href="../reference/predict_fullname.html">predict_fullname</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="st">"Alan"</span>, lastnames <span class="op">=</span> <span class="st">"Turing"</span>, labels <span class="op">=</span> <span class="va">labels</span>, model_path <span class="op">=</span> <span class="va">model_path</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   firstname lastname prob_asian prob_black prob_hispanic prob_white  race</span></span>
+<span><span class="co">#&gt; 1      Alan   Turing 0.02842531  0.2051059    0.02074103  0.7457278 white</span></span></code></pre></div>
+<p>In fact, if you tweak the code to predict gender from names, this
+will also work.</p>
 </div>
 </div>
   </div>
@@ -166,7 +196,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

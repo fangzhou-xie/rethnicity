@@ -19,7 +19,7 @@ For most use cases, use [predict_ethnicity()] for prediction."><!-- mathjax --><
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rethnicity</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.4</span>
       </span>
     </div>
 
@@ -70,31 +70,42 @@ For most use cases, use [predict_ethnicity()] for prediction.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">predict_lastname</span><span class="op">(</span>
-  <span class="va">lastnames</span>,
-  na.rm <span class="op">=</span> <span class="cn">FALSE</span>,
-  threads <span class="op">=</span> <span class="fl">0L</span>,
-  labels <span class="op">=</span> <span class="cn">NULL</span>,
-  model_path <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">predict_lastname</span><span class="op">(</span></span>
+<span>  <span class="va">lastnames</span>,</span>
+<span>  na.rm <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  threads <span class="op">=</span> <span class="fl">0L</span>,</span>
+<span>  labels <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  model_path <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>lastnames</dt>
 <dd><p>character vector, last names</p></dd>
+
+
 <dt>na.rm</dt>
 <dd><p>bool, default to FALSE, whether to remove the na in the `lastnames`</p></dd>
+
+
 <dt>threads</dt>
 <dd><p>int, number of threads for multi-threading</p></dd>
+
+
 <dt>labels</dt>
 <dd><p>character vector, labels of the classification model, needs to be in the same order as the trained model</p></dd>
+
+
 <dt>model_path</dt>
 <dd><p>character file path, the path to the trained model in .json format (converted from Keras by frugally-deep)</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>data.frame with predicted probability and predicted ethnicity</p>
+    
+
+<p>data.frame with predicted probability and predicted ethnicity</p>
     </div>
 
   </div>
@@ -109,7 +120,7 @@ For most use cases, use [predict_ethnicity()] for prediction.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
