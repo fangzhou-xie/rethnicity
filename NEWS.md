@@ -1,4 +1,4 @@
-# rethnicity (0.2.4)
+# rethnicity 0.2.4 (2023-03-04)
 
 ## fix CRAN notes:
 
