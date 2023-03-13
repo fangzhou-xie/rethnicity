@@ -3,7 +3,6 @@
 ## fix CRAN notes:
 
 * startup message can be suppressed
-* NEWS.md version update (version not in brackets)
 
 ## other minor changes:
 
