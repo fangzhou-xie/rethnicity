@@ -176,15 +176,15 @@ multi-threading via the wonderful <code>RcppThread</code> package. To
 use this, just pass a number to the <code>threads</code> argument and
 the number need to be greater than 0.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">firstnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"Samuel"</span>, <span class="fl">10000</span><span class="op">)</span></span>
-<span><span class="va">lastnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"Jackson"</span>, <span class="fl">10000</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">firstnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"Samuel"</span>, <span class="fl">1000</span><span class="op">)</span></span>
+<span><span class="va">lastnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"Jackson"</span>, <span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="co"># measure the elapsed time</span></span>
 <span><span class="va">start_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predict_ethnicity.html">predict_ethnicity</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="va">firstnames</span>, lastnames <span class="op">=</span> <span class="va">lastnames</span>, threads <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">end_time</span> <span class="op">-</span> <span class="va">start_time</span></span>
-<span><span class="co">#&gt; Time difference of 5.550265 secs</span></span></code></pre></div>
-<p>Processing ten thousands names only spent around 0.64 seconds for us.
+<span><span class="co">#&gt; Time difference of 0.5697351 secs</span></span></code></pre></div>
+<p>Processing one thousand names only spent around 0.064 seconds for us.
 I would call this pretty fast.</p>
 <p>For most use cases that I can imagine, the default setting
 (<code>threads = 0</code>) should be fast enough since we are leveraging
