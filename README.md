@@ -87,8 +87,8 @@ that discusses how to use this package.
 
 The complete description of the methodology is on
 [arXiv](https://arxiv.org/abs/2109.09228) and published on
-[SoftwareX](https://www.sciencedirect.com/science/article/pii/S2352711021001874)
-and please cite it as:
+[SoftwareX](https://doi.org/10.1016/j.softx.2021.100965) and please cite
+it as:
 
     @article{xie2022,
       title = {Rethnicity: {{An R}} Package for Predicting Ethnicity from Names},

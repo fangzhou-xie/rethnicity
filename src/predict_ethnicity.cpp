@@ -8,6 +8,16 @@ using namespace Rcpp;
 #include <fdeep/fdeep.hpp>
 #include "string_to_id.h"
 
+
+// // [[Rcpp::export()]]
+// int predict_test_cpp(std::string strings, std::string model_path) {
+//   std::vector<double> result;
+//   
+//   auto model = fdeep::load_model(model_path, false, fdeep::dev_null_logger);
+//   
+//   return 0;
+// }
+
 // [[Rcpp::export(name = "predict_lastname_cpp")]]
 Eigen::MatrixXd predict_lastname(std::vector<std::string> strings, int threads, std::string model_path) {
   // init float vector

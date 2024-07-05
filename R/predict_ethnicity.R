@@ -177,3 +177,18 @@ predict_fullname <- function(firstnames, lastnames, na.rm = FALSE, threads = 0L,
   
   race_df # return data.frame
 }
+
+
+
+# # test function
+# 
+# predict_test <- function(ln) {
+#   model_path <- system.file("models", "lastname_distill.json", package = "rethnicity", mustWork = TRUE)
+#   predict_test_cpp(ln, model_path)
+# }
+# 
+# 
+# 
+# predict_test <- rethnicity:::predict_test
+# 
+# predict_test("Turing")

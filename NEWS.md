@@ -1,11 +1,18 @@
-# rethnicity 0.2.4 (2023-03-04)
+# rethnicity 0.2.5
 
-## fix CRAN notes:
+## fix CRAN WARN
+
+* WARN created by the change of C++20 standard (GCC-14): specify C++17 for now
+* update arxiv doi link as well
+
+## sunsetting `rethnicity` in favor of `rethnicity2` 
+
+* `frugally-deep` has dropped support for RNN-based networks 
+* `rethnicity2` will be transformer-based (should also improve performance)
+
+# rethnicity 0.2.4
 
 * startup message can be suppressed
-
-## other minor changes:
-
 * update README: it is recommended to use `pak` for installation
 
 

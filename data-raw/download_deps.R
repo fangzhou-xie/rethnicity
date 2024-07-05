@@ -11,8 +11,9 @@ system("wget -O inst/include/nlohmann/json.hpp https://raw.githubusercontent.com
 system("wget -O inst/include/fplus/fplus.hpp https://raw.githubusercontent.com/Dobiasd/FunctionalPlus/master/include_all_in_one/include/fplus/fplus.hpp")
 
 # only copy the frugally-deep headers
-# system("git clone --depth 1 --filter=blob:none --sparse https://github.com/Dobiasd/frugally-deep")
-system("svn export https://github.com/Dobiasd/frugally-deep/trunk/include/fdeep inst/include/fdeep --force")
+system("git clone --depth 1 --filter=blob:none --sparse https://github.com/Dobiasd/frugally-deep")
+# Github removed svn support
+# system("svn export https://github.com/Dobiasd/frugally-deep/trunk/include/fdeep inst/include/fdeep --force")
 
 # system("svn export https://gitlab.com/libeigen/eigen/-/tree/master/Eigen include/Eigen --force")
 # download the keras export python code itself
@@ -41,16 +42,19 @@ system("wget -O data-raw/convert_model.py https://raw.githubusercontent.com/Dobi
 #   writeLines(lines, "inst/include/nlohmann/json.hpp")
 # }
 
-files <- c("fdeep/common.hpp", "fdeep/import_model.hpp", "fplus/fplus.hpp", "nlohmann/json.hpp")
-for (file in files) {
-  lines <- readLines(paste0("inst/include/", file))
-  lines <- unlist(Map(function(x) ifelse(grepl("#pragma GCC diagnostic", x, fixed = TRUE), paste("//", x, collapse = ""), x), 
-                      lines), F, F)
-  lines <- unlist(Map(function(x) ifelse(grepl("#pragma clang diagnostic", x, fixed = TRUE), paste("//", x, collapse = ""), x), 
-                      lines), F, F)
-  writeLines(lines, paste0("inst/include/", file))
-}
-
+(
+  function() {
+    files <- c("fdeep/common.hpp", "fdeep/import_model.hpp", "fplus/fplus.hpp", "nlohmann/json.hpp")
+    for (file in files) {
+      lines <- readLines(paste0("inst/include/", file))
+      lines <- unlist(Map(function(x) ifelse(grepl("#pragma GCC diagnostic", x, fixed = TRUE), paste("//", x, collapse = ""), x), 
+                          lines), FALSE, FALSE)
+      lines <- unlist(Map(function(x) ifelse(grepl("#pragma clang diagnostic", x, fixed = TRUE), paste("//", x, collapse = ""), x), 
+                          lines), FALSE, FALSE)
+      writeLines(lines, paste0("inst/include/", file))
+    }
+  }
+)()
 
 
 # # download the conversion python code
