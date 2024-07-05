@@ -77,8 +77,8 @@ Alright. The package also supports extremely fast execution by multi-threading v
 To use this, just pass a number to the `threads` argument and the number need to be greater than 0.
 
 ```{r}
-firstnames <- rep("Samuel", 10000)
-lastnames <- rep("Jackson", 10000)
+firstnames <- rep("Samuel", 1000)
+lastnames <- rep("Jackson", 1000)
 # measure the elapsed time
 start_time <- Sys.time()
 p <- predict_ethnicity(firstnames = firstnames, lastnames = lastnames, threads = parallel::detectCores()-2)
@@ -86,7 +86,7 @@ end_time <- Sys.time()
 end_time - start_time
 ```
 
-Processing ten thousands names only spent around 0.64 seconds for us. I would call this pretty fast.
+Processing one thousand names only spent around 0.064 seconds for us. I would call this pretty fast.
 
 For most use cases that I can imagine, the default setting (`threads = 0`) should be fast enough since we are leveraging C++
 routines for the processing. If you have very large dataset, or if you have a powerful machine, or if you just
