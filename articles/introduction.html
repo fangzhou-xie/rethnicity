@@ -182,7 +182,7 @@ the number need to be greater than 0.</p>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predict_ethnicity.html">predict_ethnicity</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="va">firstnames</span>, lastnames <span class="op">=</span> <span class="va">lastnames</span>, threads <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">end_time</span> <span class="op">-</span> <span class="va">start_time</span></span>
-<span><span class="co">#&gt; Time difference of 0.57218 secs</span></span></code></pre></div>
+<span><span class="co">#&gt; Time difference of 0.5672717 secs</span></span></code></pre></div>
 <p>Processing one thousand names only spent around 0.064 seconds for us.
 I would call this pretty fast.</p>
 <p>For most use cases that I can imagine, the default setting
