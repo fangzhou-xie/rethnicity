@@ -292,8 +292,8 @@ namespace fplus {
 namespace utils {
 
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Weffc++"
 #endif
 
 /**
@@ -637,7 +637,7 @@ namespace utils {
     }
 
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
 
 }
@@ -2369,8 +2369,8 @@ namespace fplus {
 namespace internal {
 
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Weffc++"
 #endif
 
     template <class T>
@@ -2476,7 +2476,7 @@ namespace internal {
     };
 
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
 
     template <
