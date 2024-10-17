@@ -22,10 +22,12 @@ library(badger)
 <!-- badges: start -->
 ```{r, echo = FALSE, results = "asis"}
 cat(
+  badge_doi("10.1016/j.softx.2021.100965", "yellow"),
+  badge_lifecycle("stable"),
   badge_cran_release("rethnicity", "green"),
   badge_cran_download("rethnicity", "grand-total", "green"),
   badge_cran_checks("rethnicity"),
-  badge_github_actions()
+  badge_github_actions("fangzhou-xie/rethnicity")
 )
 ```
 <!-- badges: end -->

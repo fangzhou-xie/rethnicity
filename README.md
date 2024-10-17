@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![](https://img.shields.io/badge/doi-10.1016/j.softx.2021.100965-yellow.svg)](https://doi.org/10.1016/j.softx.2021.100965)
+[![](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![](https://www.r-pkg.org/badges/version/rethnicity?color=green)](https://cran.r-project.org/package=rethnicity)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity?color=green)](https://cran.r-project.org/package=rethnicity)
 [![CRAN
