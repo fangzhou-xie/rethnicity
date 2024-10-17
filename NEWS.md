@@ -1,3 +1,11 @@
+# rethnicity 0.2.6
+
+## update readme
+
+* beautify startup message (entirely rewrite with `cli`)
+* add citation info at package startup
+* check the input to be character vector only, not dataframe
+
 # rethnicity 0.2.5
 
 ## fix CRAN WARN

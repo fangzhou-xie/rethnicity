@@ -23,7 +23,7 @@ LinkingTo:
     RcppEigen,
     RcppThread (>= 2.1.3)
 Imports: 
-    Rcpp, cli
+    Rcpp, cli, rlang
 Suggests: 
     pak,
     knitr,
@@ -34,3 +34,4 @@ Suggests:
 VignetteBuilder: knitr
 Language: en-US
 Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)

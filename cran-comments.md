@@ -1,14 +1,11 @@
 ## Update Submission
 
-* update arxiv doi
-* Fix CRAN "warning: template-id not allowed for constructor in C++20"
-* add C++17 spec (to remove the warning for now)
-* a new package is under construction to replace this one eventually
+* rewrite the startup messsages using `cli`
+* only allow for character vector for `predict_ethnicity` function 
 
 ## Test environments
 * local Ubuntu 22.04, R 4.4.1
-* Github action
-* rhub
+* Github action (ubuntu-latest, windows-latest, macos-latest)
 * win-builder
 
 ## R CMD check results

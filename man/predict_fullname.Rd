@@ -18,7 +18,7 @@ predict_fullname(
 
 \item{lastnames}{character vector, last names}
 
-\item{na.rm}{bool, default to FALSE, whether to remove the na in the `lastnames`}
+\item{na.rm}{bool, default to FALSE, whether to remove the na in the \code{lastnames}}
 
 \item{threads}{int, number of threads for multi-threading}
 
@@ -31,6 +31,6 @@ data.frame with predicted probability and predicted ethnicity
 }
 \description{
 Predicts ethnicity from first names and last names, using self-trained model with customized labels.
-This is designed for advanced users who wish to use their own models. 
-For most use cases, use [predict_ethnicity()] for prediction.
+This is designed for advanced users who wish to use their own models.
+For most use cases, use \code{\link[=predict_ethnicity]{predict_ethnicity()}} for prediction.
 }

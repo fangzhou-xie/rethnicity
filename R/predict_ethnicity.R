@@ -45,6 +45,9 @@ predict_ethnicity <- function(firstnames = NULL, lastnames = NULL, method = "ful
     if (is.null(firstnames) | is.null(lastnames)) {
       stop("You must provide both 'firstnames' and 'lastnames' arguments!")
     }
+    if (!(is.character(firstnames) & is.character(lastnames))) {
+      stop("Arguments `firstnames` and `lastnames` must be character vectors!")
+    }
     if (length(firstnames) != length(lastnames)) {
       stop("The length of 'firstnames' and 'lastnames' are not equal!")
     }
@@ -58,6 +61,9 @@ predict_ethnicity <- function(firstnames = NULL, lastnames = NULL, method = "ful
     }
     if (!is.null(firstnames)) {
       stop("The method is 'lastname' but also provided 'firstnames' argument. Either use 'fullname' method or not using 'firstnames' argument.")
+    }
+    if (!is.character(lastnames)) {
+      stop("Argument `lastnames` must be character vector!")
     }
     if (na.rm) {
       na_check <- is.na(lastnames)

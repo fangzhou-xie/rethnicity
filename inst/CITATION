@@ -1,0 +1,16 @@
+bibentry(
+  "Article",
+  title = "Rethnicity: An {R} Package for Predicting Ethnicity from Names",
+  shorttitle = "Rethnicity",
+  author = "Xie, Fangzhou",
+  year = "2022",
+  journal = "SoftwareX",
+  volume = "17",
+  pages = "100965",
+  issn = "2352-7110",
+  doi = "10.1016/j.softx.2021.100965",
+  urldate = "2022-01-06",
+  copyright = "All rights reserved",
+  langid = "english",
+  abbr = "SoftwareX"
+)

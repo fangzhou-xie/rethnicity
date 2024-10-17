@@ -8,6 +8,7 @@ using namespace Rcpp;
 #include <fdeep/fdeep.hpp>
 #include "string_to_id.h"
 
+// TODO: add cli progress bar support
 
 // // [[Rcpp::export()]]
 // int predict_test_cpp(std::string strings, std::string model_path) {
