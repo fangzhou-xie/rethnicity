@@ -10,12 +10,12 @@ name: R-CMD-check
 
 jobs:
   R-CMD-check:
-  	strategy:
-  		matrix:
-  			os:
-  				- ubuntu-latest
-  				- macos-latest
-  				- windows-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
     runs-on: ${{ matrix.os }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
