@@ -13,49 +13,45 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- # ```{r, echo = FALSE, results = "hide", message = FALSE} -->
-<!-- # suppressMessages(library(badger)) -->
-<!-- # ``` -->
+```{r, echo = FALSE, results = "hide", message = FALSE}
+library(badger)
+```
 
 # rethnicity
 
 <!-- badges: start -->
-<!-- # ```{r, echo = FALSE, results = "asis"} -->
-<!-- # cat( -->
-<!-- #   badge_cran_release("rethnicity", "green"), -->
-<!-- #   badge_cran_download("rethnicity", "grand-total", "green"), -->
-<!-- #   badge_cran_checks("rethnicity"), -->
-<!-- #   badge_last_commit("fangzhou-xie/rethnicity") -->
-<!-- # ) -->
-<!-- # ``` -->
-[![R-CMD-check](https://github.com/fangzhou-xie/rethnicity/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fangzhou-xie/rethnicity/actions/workflows/R-CMD-check.yaml)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
-[![CRAN_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
-<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
-[![Lifecycle: deprecated](https://img.shields.io/badge/lifecycle-deprecated-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#deprecated)
+```{r, echo = FALSE, results = "asis"}
+cat(
+  badge_cran_release("rethnicity", "green"),
+  badge_cran_download("rethnicity", "grand-total", "green"),
+  badge_cran_checks("rethnicity"),
+  badge_github_actions()
+)
+```
 <!-- badges: end -->
+
+<!-- [![Lifecycle: deprecated](https://img.shields.io/badge/lifecycle-deprecated-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#deprecated) -->
+
 
 The goal of rethnicity is to provide a method to predict ethnicity from names of people.
 
 ## WARNING!
 
-I created this package hoping to help applied researchers on their studies regarding ethnic bias and discrimination,
-and potentially eliminate the racial and ethnic disparities. By using this package, you AGREE to the following:
+I created this package hoping to help applied researchers on their studies regarding ethnic bias and discrimination, and potentially eliminate the racial and ethnic disparities. By using this package, you AGREE to the following:
 
-1. You **understand** that the method cannot make predictions 100% correct, and you should be cautious about the results.
-2. You **will NOT** use this package for purposes other than academic research.
-3. You **will NOT** disclose the predicted ethnic group to the public, given the names data you might have.
-4. You **will NOT** discriminate anyone on the basis of race and color, by using the methods provided by this package.
-5. You **will not** use the information to study individuals, but rather to study populations in the aggregate.
-
+1.  You **understand** that the method cannot make predictions 100% correct, and you should be cautious about the results.
+2.  You **will NOT** use this package for purposes other than academic research.
+3.  You **will NOT** disclose the predicted ethnic group to the public, given the names data you might have.
+4.  You **will NOT** discriminate anyone on the basis of race and color, by using the methods provided by this package.
+5.  You **will not** use the information to study individuals, but rather to study populations in the aggregate.
 
 Again, you should use the package responsibly and please refer to the [methodology paper](#documentation-on-methodology) for details.
 
-## Documentation on Methodology
+## Documentation on Methodology {#documentation-on-methodology}
 
 The complete description of the methodology is on [arXiv](https://arxiv.org/abs/2109.09228) and published on [SoftwareX](https://doi.org/10.1016/j.softx.2021.100965) and please cite it as:
 
-```
+```         
 @article{xie2022,
   title = {Rethnicity: {{An R}} Package for Predicting Ethnicity from Names},
   shorttitle = {Rethnicity},
@@ -85,8 +81,7 @@ pak::pkg_install("rethnicity")
 pak::pkg_install("fangzhou-xie/rethnicity")
 ```
 
-Of course, you can also install the package in the old way: 
-install the released version of rethnicity from [CRAN](https://CRAN.R-project.org) with:
+Of course, you can also install the package in the old way: install the released version of rethnicity from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("rethnicity")
@@ -101,10 +96,7 @@ devtools::install_github("fangzhou-xie/rethnicity")
 
 ## How to use this package?
 
-There is a [vignette](https://fangzhou-xie.github.io/rethnicity/articles/introduction.html) that discusses
-how to use this package.
-
-
+There is a [vignette](https://fangzhou-xie.github.io/rethnicity/articles/introduction.html) that discusses how to use this package.
 
 ## License
 

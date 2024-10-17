@@ -1,28 +1,19 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<!-- # ```{r, echo = FALSE, results = "hide", message = FALSE} -->
-<!-- # suppressMessages(library(badger)) -->
-<!-- # ``` -->
 
 # rethnicity
 
 <!-- badges: start -->
-<!-- # ```{r, echo = FALSE, results = "asis"} -->
-<!-- # cat( -->
-<!-- #   badge_cran_release("rethnicity", "green"), -->
-<!-- #   badge_cran_download("rethnicity", "grand-total", "green"), -->
-<!-- #   badge_cran_checks("rethnicity"), -->
-<!-- #   badge_last_commit("fangzhou-xie/rethnicity") -->
-<!-- # ) -->
-<!-- # ``` -->
 
-[![R-CMD-check](https://github.com/fangzhou-xie/rethnicity/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fangzhou-xie/rethnicity/actions/workflows/R-CMD-check.yaml)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
-[![CRAN_Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity)](https://CRAN.R-project.org/package=rethnicity)
-<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
-[![Lifecycle:
-deprecated](https://img.shields.io/badge/lifecycle-deprecated-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#deprecated)
+[![](https://www.r-pkg.org/badges/version/rethnicity?color=green)](https://cran.r-project.org/package=rethnicity)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/rethnicity?color=green)](https://cran.r-project.org/package=rethnicity)
+[![CRAN
+checks](https://badges.cranchecks.info/summary/rethnicity.svg)](https://cran.r-project.org/web/checks/check_results_rethnicity.html)
+[![R build
+status](https://github.com/fangzhou-xie/rethnicity/workflows/R-CMD-check/badge.svg)](https://github.com/fangzhou-xie/rethnicity/actions)
 <!-- badges: end -->
+
+<!-- [![Lifecycle: deprecated](https://img.shields.io/badge/lifecycle-deprecated-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#deprecated) -->
 
 The goal of rethnicity is to provide a method to predict ethnicity from
 names of people.
