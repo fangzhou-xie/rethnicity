@@ -1,10 +1,15 @@
 # using template and modified from https://github.com/r-devel/recheck
+# probably better to leave it as manual, instead of auto
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      which:
+        type: choice
+        description: Which dependents to check
+        options:
+          - strong
+          - most
 
 name: Reverse dependency check
 
@@ -13,5 +18,5 @@ jobs:
     name: Reverse check ${{ inputs.which }} dependents
     uses: r-devel/recheck/.github/workflows/recheck.yml@v1
     with:
-      which: most  # strong or most
+      which: ${{ inputs.which }}
       subdirectory: '' #if your package is in a git subdir
