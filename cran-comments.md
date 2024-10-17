@@ -9,6 +9,7 @@
 * win-builder
 
 ## R CMD check results
+
 There were no ERRORs or WARNINGs. 
 
 There was 1 NOTE (as always):
@@ -21,4 +22,8 @@ There was 1 NOTE (as always):
       models    1.6Mb
 
 * The LSTM model is built natively in C++ and the result binary is large.
+* Also, this package will only receive critical maintenance from now on.
 
+## reverse dep check results (github actions)
+
+* no issue found for both the old package and the new package
