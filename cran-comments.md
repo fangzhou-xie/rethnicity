@@ -1,7 +1,8 @@
 ## Update Submission
 
 * rewrite the startup messsages using `cli`
-* only allow for character vector for `predict_ethnicity` function 
+* only allow for character vector for `predict_ethnicity` function
+* remove the `urldate` in the CITATION entry
 
 ## Test environments
 * local Ubuntu 22.04, R 4.4.1
