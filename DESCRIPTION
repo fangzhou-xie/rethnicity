@@ -3,7 +3,7 @@ Type: Package
 Title: Predicting Ethnic Group from Names
 Version: 0.2.7
 Authors@R: 
-    c(person(given = "Fangzhou", family = "Xie", role = c("aut", "cre"), 
+    c(person(given = "Fangzhou", family = "Xie", role = c("aut", "cre", "cph"), 
     email = "fangzhou.xie@rutgers.edu", comment = c(ORCID = "0000-0001-7702-093X")))
 Maintainer: Fangzhou Xie <fangzhou.xie@rutgers.edu>
 Description: Implementation of the race/ethnicity prediction method, described 
