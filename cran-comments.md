@@ -1,12 +1,11 @@
 ## Update Submission
 
-* rewrite the startup messsages using `cli`
-* only allow for character vector for `predict_ethnicity` function
-* remove the `urldate` in the CITATION entry
+* fix the clang 19/20 warnings by updating the dependency json library
 
 ## Test environments
-* local Ubuntu 22.04, R 4.4.1
+* local Ubuntu 22.04, R 4.4.3
 * Github action (ubuntu-latest, windows-latest, macos-latest)
+* rhub (clang20)
 * win-builder
 
 ## R CMD check results

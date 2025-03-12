@@ -1595,16 +1595,16 @@ NLOHMANN_JSON_NAMESPACE_END
 
 JSON_HEDLEY_DIAGNOSTIC_PUSH
 #if JSON_HEDLEY_HAS_WARNING("-Wpedantic")
-    #pragma clang diagnostic ignored "-Wpedantic"
+//     #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #if JSON_HEDLEY_HAS_WARNING("-Wc++98-compat-pedantic") && defined(__cplusplus)
-    #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+//     #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
 #if JSON_HEDLEY_GCC_HAS_WARNING("-Wvariadic-macros",4,0,0)
     #if defined(__clang__)
-        #pragma clang diagnostic ignored "-Wvariadic-macros"
+//         #pragma clang diagnostic ignored "-Wvariadic-macros"
     #elif defined(JSON_HEDLEY_GCC_VERSION)
-        #pragma GCC diagnostic ignored "-Wvariadic-macros"
+//         #pragma GCC diagnostic ignored "-Wvariadic-macros"
     #endif
 #endif
 #if defined(JSON_HEDLEY_NON_NULL)
@@ -2521,9 +2521,9 @@ JSON_HEDLEY_DIAGNOSTIC_POP
 
 // disable documentation warnings on clang
 #if defined(__clang__)
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wdocumentation"
-    #pragma clang diagnostic ignored "-Wdocumentation-unknown-command"
+//     #pragma clang diagnostic push
+//     #pragma clang diagnostic ignored "-Wdocumentation"
+//     #pragma clang diagnostic ignored "-Wdocumentation-unknown-command"
 #endif
 
 // allow disabling exceptions
@@ -4488,8 +4488,8 @@ NLOHMANN_JSON_NAMESPACE_END
 // code to stumble over this. See https://github.com/nlohmann/json/issues/4087
 // for a discussion.
 #if defined(__clang__)
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wweak-vtables"
+//     #pragma clang diagnostic push
+//     #pragma clang diagnostic ignored "-Wweak-vtables"
 #endif
 
 NLOHMANN_JSON_NAMESPACE_BEGIN
@@ -4742,7 +4742,7 @@ class other_error : public exception
 NLOHMANN_JSON_NAMESPACE_END
 
 #if defined(__clang__)
-    #pragma clang diagnostic pop
+//     #pragma clang diagnostic pop
 #endif
 
 // #include <nlohmann/detail/macro_scope.hpp>
@@ -5630,8 +5630,8 @@ namespace std
 
 #if defined(__clang__)
     // Fix: https://github.com/nlohmann/json/issues/1401
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wmismatched-tags"
+//     #pragma clang diagnostic push
+//     #pragma clang diagnostic ignored "-Wmismatched-tags"
 #endif
 template<typename IteratorType>
 class tuple_size<::nlohmann::detail::iteration_proxy_value<IteratorType>> // NOLINT(cert-dcl58-cpp)
@@ -5646,7 +5646,7 @@ class tuple_element<N, ::nlohmann::detail::iteration_proxy_value<IteratorType >>
                             ::nlohmann::detail::iteration_proxy_value<IteratorType >> ()));
 };
 #if defined(__clang__)
-    #pragma clang diagnostic pop
+//     #pragma clang diagnostic pop
 #endif
 
 }  // namespace std
@@ -17498,8 +17498,8 @@ class binary_writer
     void write_compact_float(const number_float_t n, detail::input_format_t format)
     {
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wfloat-equal"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Wfloat-equal"
 #endif
         if (static_cast<double>(n) >= static_cast<double>(std::numeric_limits<float>::lowest()) &&
                 static_cast<double>(n) <= static_cast<double>((std::numeric_limits<float>::max)()) &&
@@ -17518,7 +17518,7 @@ class binary_writer
             write_number(n);
         }
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
     }
 
@@ -18680,8 +18680,8 @@ char* to_chars(char* first, const char* last, FloatType value)
     }
 
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wfloat-equal"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Wfloat-equal"
 #endif
     if (value == 0) // +-0
     {
@@ -18692,7 +18692,7 @@ char* to_chars(char* first, const char* last, FloatType value)
         return first;
     }
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
 
     JSON_ASSERT(last - first >= std::numeric_limits<FloatType>::max_digits10);
@@ -23709,13 +23709,13 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
     bool operator==(const_reference rhs) const noexcept
     {
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wfloat-equal"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Wfloat-equal"
 #endif
         const_reference lhs = *this;
         JSON_IMPLEMENT_OPERATOR( ==, true, false, false)
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
     }
 
@@ -23813,12 +23813,12 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
     friend bool operator==(const_reference lhs, const_reference rhs) noexcept
     {
 #ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wfloat-equal"
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Wfloat-equal"
 #endif
         JSON_IMPLEMENT_OPERATOR( ==, true, false, false)
 #ifdef __GNUC__
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic pop
 #endif
     }
 
@@ -25313,7 +25313,7 @@ inline void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL& j1, nlohmann::NLOHMANN_BASIC
 
 // restore clang diagnostic settings
 #if defined(__clang__)
-    #pragma clang diagnostic pop
+//     #pragma clang diagnostic pop
 #endif
 
 // clean up
