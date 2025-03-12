@@ -32,13 +32,13 @@ and potentially eliminate the racial and ethnic disparities. By using this packa
 2. You **will NOT** disclose the predicted ethnic group to the public, given the names data you might have.
 3. You **will NOT** discriminate anyone on the basis of race and color, by using the methods provided by this package.
 4. You **understand** that the method cannot make predictions 100% correct, and you should be cautious about the results.
-<!-- 4. You **agree** to advocate racial equality. -->
+
 
 Again, you should use the package responsibly.
 
 # Getting to use the package in 5 minutes
 
-## I want to predict ethnicity from last names!
+## I want to predict race/ethnicity from last names!
 
 Sure. I have trained a model to predict and classify race based on last names.
 Simply use it as:
@@ -75,6 +75,8 @@ for the same person should have same index in each of the vectors.
 
 Alright. The package also supports extremely fast execution by multi-threading via the wonderful `RcppThread` package.
 To use this, just pass a number to the `threads` argument and the number need to be greater than 0.
+For simplicity of building this package, I will only run the experiment 
+with 1,000 repetitions.
 
 ```{r}
 firstnames <- rep("Samuel", 1000)
@@ -86,7 +88,8 @@ end_time <- Sys.time()
 end_time - start_time
 ```
 
-Processing one thousand names only spent around 0.064 seconds for us. I would call this pretty fast.
+Processing one thousand names only spent around `r end_time - start_time` seconds for us. 
+I would call this pretty fast.
 
 For most use cases that I can imagine, the default setting (`threads = 0`) should be fast enough since we are leveraging C++
 routines for the processing. If you have very large dataset, or if you have a powerful machine, or if you just

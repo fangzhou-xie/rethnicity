@@ -1,4 +1,5 @@
 Version: 1.0
+ProjectId: b78855d3-c098-4bfd-bd97-6e5df91533e1
 
 RestoreWorkspace: Default
 SaveWorkspace: Default
@@ -16,4 +17,4 @@ AutoAppendNewline: Yes
 
 BuildType: Package
 PackageUseDevtools: Yes
-PackageInstallArgs: --no-multiarch --with-keep.source
+PackageInstallArgs: --no-multiarch --with-keep.source --strip
