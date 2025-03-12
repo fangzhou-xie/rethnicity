@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rethnicity</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.7</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@ package</h1>
                         <h4 data-toc-skip class="author">Fangzhou
 Xie</h4>
             
-            <h4 data-toc-skip class="date">October 18, 2024</h4>
+            <h4 data-toc-skip class="date">March 12, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fangzhou-xie/rethnicity/blob/main/vignettes/introduction.Rmd" class="external-link"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -123,9 +123,8 @@ the public, given the names data you might have.</li>
 <li>You <strong>will NOT</strong> discriminate anyone on the basis of
 race and color, by using the methods provided by this package.</li>
 <li>You <strong>understand</strong> that the method cannot make
-predictions 100% correct, and you should be cautious about the results.
-<!-- 4. You **agree** to advocate racial equality. -->
-</li>
+predictions 100% correct, and you should be cautious about the
+results.</li>
 </ol>
 <p>Again, you should use the package responsibly.</p>
 </div>
@@ -133,7 +132,7 @@ predictions 100% correct, and you should be cautious about the results.
 <h2 id="getting-to-use-the-package-in-5-minutes">Getting to use the package in 5 minutes<a class="anchor" aria-label="anchor" href="#getting-to-use-the-package-in-5-minutes"></a>
 </h2>
 <div class="section level3">
-<h3 id="i-want-to-predict-ethnicity-from-last-names">I want to predict ethnicity from last names!<a class="anchor" aria-label="anchor" href="#i-want-to-predict-ethnicity-from-last-names"></a>
+<h3 id="i-want-to-predict-raceethnicity-from-last-names">I want to predict race/ethnicity from last names!<a class="anchor" aria-label="anchor" href="#i-want-to-predict-raceethnicity-from-last-names"></a>
 </h3>
 <p>Sure. I have trained a model to predict and classify race based on
 last names. Simply use it as:</p>
@@ -179,7 +178,8 @@ the same person should have same index in each of the vectors.</p>
 <p>Alright. The package also supports extremely fast execution by
 multi-threading via the wonderful <code>RcppThread</code> package. To
 use this, just pass a number to the <code>threads</code> argument and
-the number need to be greater than 0.</p>
+the number need to be greater than 0. For simplicity of building this
+package, I will only run the experiment with 1,000 repetitions.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">firstnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"Samuel"</span>, <span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="va">lastnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"Jackson"</span>, <span class="fl">1000</span><span class="op">)</span></span>
@@ -188,9 +188,9 @@ the number need to be greater than 0.</p>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predict_ethnicity.html">predict_ethnicity</a></span><span class="op">(</span>firstnames <span class="op">=</span> <span class="va">firstnames</span>, lastnames <span class="op">=</span> <span class="va">lastnames</span>, threads <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">end_time</span> <span class="op">-</span> <span class="va">start_time</span></span>
-<span><span class="co">#&gt; Time difference of 0.5767829 secs</span></span></code></pre></div>
-<p>Processing one thousand names only spent around 0.064 seconds for us.
-I would call this pretty fast.</p>
+<span><span class="co">#&gt; Time difference of 0.5711186 secs</span></span></code></pre></div>
+<p>Processing one thousand names only spent around 0.571118593215942
+seconds for us. I would call this pretty fast.</p>
 <p>For most use cases that I can imagine, the default setting
 (<code>threads = 0</code>) should be fast enough since we are leveraging
 C++ routines for the processing. If you have very large dataset, or if
